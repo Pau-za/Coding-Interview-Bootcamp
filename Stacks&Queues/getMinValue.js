@@ -17,9 +17,9 @@ class MinStack {
             this.minValue = element;
         } else if (element < this.minValue) {
             this.minValue = element;
+            // console.log(this.minValue);
             this.minIndex = this.size;
             this.minIndex++;
-
         }
         this.size++;
         this.storage[this.size] = element;
@@ -48,14 +48,16 @@ class MinStack {
                 counter++;
                 if (counter == 1) {
                     this.minValue = value;
+                    console.log(this.minValue);
                 } else if (value < this.minValue) {
-                    this.value = value;
+                    this.minValue = value;
                 }
+                console.log(`nuevo valor mínimo ${this.minValue}`)
             }
-            console.log(`nuevo valor mínimo ${this.minValue}`)
         } else {
             console.log(this.storage);
         }
+        console.log(this.minValue);
         return (this.minValue);
     }
 };
